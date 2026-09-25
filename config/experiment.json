@@ -1,0 +1,26 @@
+{
+  "project": "IT344 T12 Account Mapping",
+  "task": "map raw T12 account labels to a standardized chart of accounts",
+  "split_strategy": "property-level holdout with duplicate isolation",
+  "primary_metric": "exact_mapping_accuracy",
+  "secondary_metrics": [
+    "macro_f1",
+    "category_accuracy",
+    "invalid_or_unmapped_rate",
+    "latency_ms",
+    "cost_per_t12"
+  ],
+  "conditions": {
+    "A": {
+      "name": "frontier_baseline",
+      "fine_tuned": false,
+      "prompt_frozen": true
+    },
+    "B": {
+      "name": "compact_model",
+      "record_base_before_adaptation": true,
+      "adaptation": "PEFT/LoRA/QLoRA"
+    }
+  },
+  "success_rule": "adapted compact model improves held-out quality over its frozen base baseline without material category regressions; final project compares the best compact condition against the unchanged frontier baseline"
+}

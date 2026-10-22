@@ -1,0 +1,19 @@
+account_label,gold_label
+Apartment rent revenue,RENTAL_INCOME
+Residential lease receipts,RENTAL_INCOME
+Monthly tenant base rent,RENTAL_INCOME
+Electricity for common areas,UTILITIES
+Water and sewer service,UTILITIES
+Natural gas utility charges,UTILITIES
+Plumbing repair materials,REPAIRS_MAINTENANCE
+HVAC service labor,REPAIRS_MAINTENANCE
+Building maintenance supplies,REPAIRS_MAINTENANCE
+Onsite leasing salaries,PAYROLL
+Property staff wages,PAYROLL
+Employee payroll expenses,PAYROLL
+County real estate taxes,PROPERTY_TAX
+Annual property tax assessment,PROPERTY_TAX
+Local ad valorem taxes,PROPERTY_TAX
+Building hazard insurance,INSURANCE
+Property liability policy,INSURANCE
+Annual insurance premium,INSURANCE

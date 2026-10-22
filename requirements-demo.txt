@@ -1,0 +1,4 @@
+# Isolated educational compact-model demo only. No proprietary Pebbel dependencies.
+transformers>=4.44,<5
+torch>=2.2
+sentencepiece>=0.2

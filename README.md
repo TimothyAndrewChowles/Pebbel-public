@@ -122,3 +122,33 @@ flowchart LR
 3. Run the initial compact-model condition.
 4. Report exact accuracy, macro F1, invalid rate, latency, and error examples.
 5. Run the adapted condition with the same held-out test set.
+
+
+## First experimental arm: runnable public demo (October 2026)
+
+The compact-model **base inference** demonstration now has a self-contained
+synthetic test set, inference runner, scoring, and documentation. It runs an
+untuned public `google/flan-t5-small` model with deterministic generation
+against invented T12-style account labels. It is not the private Pebbel parser
+or a trained QLoRA checkpoint.
+
+**[Experiment 1 instructions](docs/EXPERIMENT_1.md)**
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-demo.txt
+python src/run_compact_baseline.py
+python src/evaluate.py results/compact_baseline.csv
+```
+
+The output CSV and printed metrics record accuracy, macro F1, category F1,
+invalid outputs, and mean inference latency. **No model performance score is
+claimed until an actual model run has been completed.** The synthetic data is
+a reproducibility check, not the private held-out dataset. Adapted-vs-base and
+frontier comparisons are still future work.
+
+Public course files: `src/run_compact_baseline.py`,
+`data/synthetic_accounts.csv`, `docs/EXPERIMENT_1.md`, and
+`requirements-demo.txt`. Generated results and confidential artifacts are
+excluded from version control.
